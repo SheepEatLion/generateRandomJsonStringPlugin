@@ -8,14 +8,25 @@
   <name>GenerateRandomJsonString</name>
 
   <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
-  <vendor email="support@yourcompany.com" url="https://www.yourcompany.com">YourCompany</vendor>
+  <vendor email="gowjr207@gmail.com" url="https://github.com/SheepEatLion/generateRandomJsonStringPlugin">JunyeongCompany</vendor>
 
   <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
        Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
        Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
   <description><![CDATA[
-    Enter short description for your plugin here.<br>
-    <em>most HTML tags may be used</em>
+    insert your keys from json or java class etc. <br>
+    this plugin fill the values automatically. <br>
+    then you can get jsonString. <br>
+
+    <h3>notice<h3>
+    there is few rule you should follow.
+    rule 1. insert format is [name, age, height, gender]
+    rule 2. default setting is alphanumeric and length is 6.
+    rule 3. if you customize length or letters, follow this example. [name*10, age*a, height*n3, gender*a20]
+      - it starts with '*'. and a means alpha only. n means number only. you don't have to 'an' that's default option.
+      - you can't insert like this [name*10a] or [lastOne,]. do not start with number. do not include comma for the end.
+
+    hope you enjoy it.
   ]]></description>
 
   <actions>

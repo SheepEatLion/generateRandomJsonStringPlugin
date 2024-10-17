@@ -8,7 +8,7 @@ import com.intellij.openapi.ui.Messages
 class RandomJsonStringPlugin: AnAction() {
     companion object {
         const val DEFAULT_CONSTRAINT = "D"
-        const val DEFAULT_LENGTH = 6
+        const val DEFAULT_LENGTH = "6"
     }
 
     override fun actionPerformed(event: AnActionEvent) {
@@ -48,13 +48,13 @@ class RandomJsonStringPlugin: AnAction() {
 
 
         val alphaNumPart = matchResult.groupValues.getOrElse(1) { DEFAULT_CONSTRAINT }
-        val lengthPart = matchResult.groupValues.getOrElse(2) { DEFAULT_LENGTH } // fixme: toInt error
-        return generateValue(length = 5, constraint = alphaNumPart)
+        val lengthPart = matchResult.groupValues.getOrElse(2) { DEFAULT_LENGTH }
+        return generateValue(length = lengthPart, constraint = alphaNumPart)
     }
 
-    private fun generateValue(length: Int = DEFAULT_LENGTH, constraint: String = DEFAULT_CONSTRAINT): String {
+    private fun generateValue(length: String = DEFAULT_LENGTH, constraint: String = DEFAULT_CONSTRAINT): String {
         val charset = getCharset(constraint)
-        return (1..length)
+        return (1..length.toInt())
                 .map { charset.random() }
                 .joinToString("")
     }
